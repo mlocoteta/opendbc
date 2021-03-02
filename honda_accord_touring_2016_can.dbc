@@ -129,14 +129,16 @@ BO_ 422 SCM_BUTTONS: 8 SCM
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" NEO
 
 BO_ 427 STEER_MOTOR_TORQUE: 3 EPS
- SG_ OUTPUT_DISABLED_INVERT : 13|1@0+ (1,0) [0|1] "not sure if its invert or some LDW" EON
  SG_ COUNTER : 21|2@0+ (1,0) [0|3] "" EON
  SG_ CHECKSUM : 19|4@0+ (1,0) [0|15] "" EON
  SG_ MOTOR_TORQUE : 0|10@1- (1,0) [-512|512] "" XXX
- SG_ EPS_LKAS_ACTIVE : 15|1@0+ (1,0) [0|1] "" XXX
- SG_ LKAS_ACTIVE_INVERT : 14|1@0+ (1,0) [0|1] "" EON
- SG_ UNK_BIT1 : 22|1@0+ (1,0) [0|1] "" EON
- SG_ LKAS_DISABLED : 12|1@0+ (1,0) [0|1] "" XXX
+ SG_ LIN_LKAS_B0_O4 : 10|1@0+ (1,0) [0|1] "" XXX
+ SG_ LIN_EPS_B0_O4 : 11|1@0+ (1,0) [0|1] "" XXX
+ SG_ LIN_EPS_B2_O6 : 23|1@0+ (1,0) [0|1] "" XXX
+ SG_ LIN_EPS_B2_O2 : 22|1@0+ (1,0) [0|1] "" XXX
+ SG_ LIN_EPS_B2_O1 : 15|1@0+ (1,0) [0|1] "" XXX
+ SG_ LIN_EPS_B2_O0 : 14|1@0+ (1,0) [0|1] "" XXX
+ SG_ LIN_EPS_B1_O6 : 13|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 426 XXX_4: 8 VSA
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" NEO
