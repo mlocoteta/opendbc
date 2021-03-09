@@ -46,7 +46,6 @@ BO_ 145 XXX_2: 8 XXX
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|15] "" NEO
 
 BO_ 228 STEERING_CONTROL: 5 ADAS
- SG_ STEER_TORQUE : 7|16@0- (1,0) [-3840|3840] "" EPS
  SG_ STEER_TORQUE_REQUEST : 23|1@0+ (1,0) [0|1] "" EPS
  SG_ SET_ME_X00 : 31|8@0+ (1,0) [0|0] "" EPS
  SG_ COUNTER : 37|2@0+ (1,0) [0|3] "" EPS
@@ -57,7 +56,8 @@ BO_ 228 STEERING_CONTROL: 5 ADAS
  SG_ SEND_LIN_WHOLE_DATA : 19|1@0+ (1,0) [0|1] "" XXX
  SG_ LDW_SIGNAL_2 : 20|1@0+ (1,0) [0|1] "" XXX
  SG_ LDW_SIGNAL_1 : 21|1@0+ (1,0) [0|1] "" XXX
- SG_ ENABLE_LIN_BOARD_WIGGLE_BIT : 22|1@0+ (1,0) [0|1] "" XXX
+ SG_ STEER_TORQUE : 7|16@0- (1,0) [-3840|3840] "" EPS
+ SG_ DISABLE_LIN_BOARD_WIGGLE_BIT : 22|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 316 GAS_PEDAL: 8 PCM
  SG_ CAR_GAS : 39|8@0+ (1,0) [0|255] "" NEO
@@ -608,7 +608,7 @@ BO_TX_BU_ 927 : NEO,ADAS;
 CM_ SG_ 228 SEND_LIN_WHOLE_DATA "takes the MCU LKAS STEER_TORQUE, EPS ";
 CM_ SG_ 228 LDW_SIGNAL_2 "LKAS B1O4";
 CM_ SG_ 228 LDW_SIGNAL_1 "LKAS B1 5";
-CM_ SG_ 228 ENABLE_LIN_BOARD_WIGGLE_BIT "this makes the apply_steer value never be the same. it will c hange the LSB. so it could actually go over OP max torque by 1.. this needs to be redone, but it works for now";
+CM_ SG_ 228 DISABLE_LIN_BOARD_WIGGLE_BIT "this makes the apply_steer value never be the same. it will c hange the LSB. so it could actually go over OP max torque by 1.. this needs to be redone, but it works for now";
 CM_ SG_ 399 LIN_INTERFACE_FATAL_ERROR "";
 CM_ SG_ 399 OP_STEERING_CONTROL_MSG_ACTIVE "this comes on when the LIN_interface sees the 0xe4 message";
 CM_ SG_ 399 STEER_STATUS "11 is EPS fail for oversteer. look at code for more";
