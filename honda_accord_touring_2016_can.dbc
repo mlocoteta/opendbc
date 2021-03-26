@@ -202,7 +202,24 @@ BO_ 506 BRAKE_COMMAND: 8 ADAS
 
 BO_ 507 XXX_7: 1 XXX
 
-BO_ 512 LKAS_SERIAL: 8 XXX
+BO_ 512 GAS_COMMAND: 6 EON
+ SG_ GAS_COMMAND : 7|16@0+ (0.253984064,-83.3) [0|1] "" INTERCEPTOR
+ SG_ GAS_COMMAND2 : 23|16@0+ (0.126992032,-83.3) [0|1] "" INTERCEPTOR
+ SG_ ENABLE : 39|1@0+ (1,0) [0|1] "" INTERCEPTOR
+ SG_ COUNTER_PEDAL : 35|4@0+ (1,0) [0|15] "" INTERCEPTOR
+ SG_ CHECKSUM_PEDAL : 47|8@0+ (1,0) [0|255] "" INTERCEPTOR
+
+BO_ 513 GAS_SENSOR: 6 INTERCEPTOR
+ SG_ INTERCEPTOR_GAS : 7|16@0+ (0.253984064,-83.3) [0|1] "" EON
+ SG_ INTERCEPTOR_GAS2 : 23|16@0+ (0.126992032,-83.3) [0|1] "" EON
+ SG_ STATE : 39|4@0+ (1,0) [0|15] "" EON
+ SG_ COUNTER_PEDAL : 35|4@0+ (1,0) [0|15] "" EON
+ SG_ CHECKSUM_PEDAL : 47|8@0+ (1,0) [0|255] "" EON
+
+VAL_ 513 STATE 5 "FAULT_TIMEOUT" 4 "FAULT_STARTUP" 3 "FAULT_SCE" 2 "FAULT_SEND" 1 "FAULT_BAD_CHECKSUM" 0 "NO_FAULT" ;
+
+
+BO_ 515 LKAS_SERIAL: 8 XXX
  SG_ BIG_STEER : 3|4@0- (1,0) [0|15] "" XXX
  SG_ SERIAL_COUNTER : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ LITTLE_STEER : 12|5@0- (1,0) [0|31] "" XXX
@@ -459,3 +476,6 @@ CM_ SG_ 512 APPLY_STEER "thi sis big_steer and little_steer put together";
 CM_ SG_ 521 UNK_SIGNAL "ive never seen this move like this..";
 VAL_ 401 GEAR_SHIFTER 32 "L" 16 "S" 8 "D" 4 "N" 2 "R" 1 "P" ;
 CM_ "CHFFR_METRIC 342 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE 1 0";
+VAL_ 399 STEER_STATUS 11 "lkas_over_trq_req_fault" 7 "driver_over_torque_fault" 2 "fault_pending" 0 "normal" ;
+CM_ "fault_pending comes for 4 times in a row before hard setting a fault, Ive seen it come on for other reasons, but need more investigation";
+
