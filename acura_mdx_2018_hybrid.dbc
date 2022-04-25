@@ -5,7 +5,7 @@ CM_ "file copied from 2017 Honda Pilot.  Added LIN board 228/339/428 frames... t
 CM_ "Imported file _comma.dbc starts here";
 
 BO_ 513 GAS_SENSOR: 6 INTERCEPTOR
- SG_ INTERCEPTOR_GAS : 7|16@0+ (1, 0) [0|1] "" EON
+ SG_ INTERCEPTOR_GAS : 7|16@0+ (1,0) [0|1] "" EON
  SG_ INTERCEPTOR_GAS2 : 23|16@0+ (1,0) [0|1] "" EON
  SG_ STATE : 39|4@0+ (1,0) [0|15] "" EON
  SG_ COUNTER_PEDAL : 35|4@0+ (1,0) [0|15] "" EON
